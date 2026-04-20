@@ -1,5 +1,5 @@
 image:
-  repository: ghcr.io/anthropics/claude-code
+  repository: ghcr.io/kelos-dev/claude-code
   tag: latest
   pullPolicy: IfNotPresent
 

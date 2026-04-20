@@ -1,6 +1,6 @@
 apiVersion: v2
 name: claude-code-throwaway
-version: 0.1.1
+version: 0.1.2
 description: Throwaway isolated Claude Code workspace for Kubernetes
-appVersion: "0.1.1"
+appVersion: "0.1.2"
 type: application
