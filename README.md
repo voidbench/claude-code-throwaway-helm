@@ -95,6 +95,29 @@ That said, for SaaS endpoints like Anthropic or GitHub, IP pinning is annoying a
 - `service.enabled`: expose a service when needed
 - `ingress.enabled`: optional ingress
 
+## Publishing to GHCR as OCI chart
+
+This repo includes a GitHub Actions workflow that packages the chart and pushes it to GHCR as an OCI artifact on every push to `main`.
+
+Published location:
+
+```sh
+oci://ghcr.io/<owner>/charts/claude-code-throwaway
+```
+
+Pull or install it like this:
+
+```sh
+helm pull oci://ghcr.io/<owner>/charts/claude-code-throwaway --version 0.1.0
+helm install claude oci://ghcr.io/<owner>/charts/claude-code-throwaway --version 0.1.0
+```
+
+Notes:
+
+- the workflow uses the built-in `GITHUB_TOKEN`
+- repository Actions permissions must allow package write access
+- chart version comes from `Chart.yaml`
+
 ## Caveats
 
 - This does not magically make Claude Code safe. It only gives you better isolation.
